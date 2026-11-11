@@ -1,0 +1,194 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2600" height="2670" viewBox="0 0 2600 2670">
+<rect width="100%" height="100%" fill="white"/>
+<title>AdoSQL - Detailed architecture</title>
+<desc>Proposed multi-organization ADO ingestion, normalized SQL data, SKU-to-media/platform mapping, deterministic metrics and grounded LLM issue summaries displayed in the dashboard's rightmost column.</desc>
+<text x="70" y="40" font-family="Segoe UI, Arial, sans-serif" font-size="43" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">AdoSQL | Detailed architecture</text>
+<text x="70" y="105" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Eight ADO stages -&gt; normalized evidence -&gt; SKU mapping -&gt; dashboard + LLM insights</text>
+<rect x="70" y="158" width="18" height="18" rx="2" fill="#F3F4F6" stroke="#667085" stroke-width="2"/>
+<text x="100" y="154" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Stage sources / reference data</text>
+<rect x="650" y="158" width="18" height="18" rx="2" fill="#EFF6FD" stroke="#0078D4" stroke-width="2"/>
+<text x="680" y="154" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">ADO ingestion / SQL mapping</text>
+<rect x="1230" y="158" width="18" height="18" rx="2" fill="#F5EFFA" stroke="#5C2D91" stroke-width="2"/>
+<text x="1260" y="154" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Evidence-grounded LLM</text>
+<rect x="1810" y="158" width="18" height="18" rx="2" fill="#E8F6F6" stroke="#0C8599" stroke-width="2"/>
+<text x="1840" y="154" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Dashboard</text>
+<text x="70" y="210" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Fixed stage order | each stage has its own ADO organization.</text>
+<rect x="70" y="265" width="290" height="170" rx="12" fill="#F3F4F6" stroke="#667085" stroke-width="2"/>
+<text x="191.33333333333334" y="285" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">CDL</text>
+<text x="154.33333333333334" y="325" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Capture: Media</text>
+<text x="123.00520833333333" y="356" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Stage-specific ADO org</text>
+<polyline points="215,435 215,470" fill="none" stroke="#667085" stroke-width="3"/>
+<rect x="380" y="265" width="290" height="170" rx="12" fill="#F3F4F6" stroke="#667085" stroke-width="2"/>
+<text x="506.3333333333333" y="285" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">SIP</text>
+<text x="455.6666666666667" y="325" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Capture: Platform</text>
+<text x="433.0052083333333" y="356" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Stage-specific ADO org</text>
+<polyline points="525,435 525,470" fill="none" stroke="#667085" stroke-width="3"/>
+<rect x="690" y="265" width="290" height="170" rx="12" fill="#F3F4F6" stroke="#667085" stroke-width="2"/>
+<text x="810.0052083333334" y="285" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">RDT</text>
+<text x="774.3333333333334" y="325" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Capture: Media</text>
+<text x="743.0052083333334" y="356" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Stage-specific ADO org</text>
+<polyline points="835,435 835,470" fill="none" stroke="#667085" stroke-width="3"/>
+<rect x="1000" y="265" width="290" height="170" rx="12" fill="#F3F4F6" stroke="#667085" stroke-width="2"/>
+<text x="1034.3333333333333" y="285" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">Media Perf testing</text>
+<text x="1084.3333333333333" y="325" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Capture: Media</text>
+<text x="1053.0052083333333" y="356" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Stage-specific ADO org</text>
+<polyline points="1145,435 1145,470" fill="none" stroke="#667085" stroke-width="3"/>
+<rect x="1310" y="265" width="290" height="170" rx="12" fill="#F3F4F6" stroke="#667085" stroke-width="2"/>
+<text x="1424.0104166666667" y="285" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">SLCQ</text>
+<text x="1341.0052083333333" y="325" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">System-level commodity test</text>
+<text x="1385.6666666666667" y="356" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Capture: Platform</text>
+<text x="1363.0052083333333" y="387" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Stage-specific ADO org</text>
+<polyline points="1455,435 1455,470" fill="none" stroke="#667085" stroke-width="3"/>
+<rect x="1620" y="265" width="290" height="170" rx="12" fill="#F3F4F6" stroke="#667085" stroke-width="2"/>
+<text x="1709.6666666666667" y="285" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">SKU Qual</text>
+<text x="1713.0" y="325" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Capture: SKU</text>
+<text x="1673.0052083333333" y="356" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Stage-specific ADO org</text>
+<polyline points="1765,435 1765,470" fill="none" stroke="#667085" stroke-width="3"/>
+<rect x="1930" y="265" width="290" height="170" rx="12" fill="#F3F4F6" stroke="#667085" stroke-width="2"/>
+<text x="2016.3489583333333" y="285" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">Scale Test</text>
+<text x="2023.0" y="325" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Capture: SKU</text>
+<text x="1983.0052083333333" y="356" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Stage-specific ADO org</text>
+<polyline points="2075,435 2075,470" fill="none" stroke="#667085" stroke-width="3"/>
+<rect x="2240" y="265" width="290" height="170" rx="12" fill="#F3F4F6" stroke="#667085" stroke-width="2"/>
+<text x="2262.6666666666665" y="285" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">Load &amp; Performance</text>
+<text x="2369.015625" y="325" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Test</text>
+<text x="2333.0" y="356" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Capture: SKU</text>
+<text x="2293.0052083333335" y="387" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Stage-specific ADO org</text>
+<polyline points="2385,435 2385,470" fill="none" stroke="#667085" stroke-width="3"/>
+<polyline points="215,470 2385,470" fill="none" stroke="#667085" stroke-width="3"/>
+<polyline points="1300,470 1300,520" fill="none" stroke="#0078D4" stroke-width="3"/>
+<polygon points="1300,520 1293.9104825224429,507.39374056706254 1306.0895174775571,507.39374056706254" fill="#0078D4"/>
+<rect x="100" y="535" width="650" height="100" rx="50.0" fill="#EFF6FD" stroke="#0078D4" stroke-width="2"/>
+<text x="288.66666666666663" y="555" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">Scheduled sync trigger</text>
+<text x="214.66666666666666" y="595" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Azure Functions timer / configured cadence</text>
+<polyline points="750,585 940,585" fill="none" stroke="#0078D4" stroke-width="3"/>
+<polygon points="940,585 927.3937405670625,591.0895174775573 927.3937405670625,578.9104825224427" fill="#0078D4"/>
+<rect x="940" y="520" width="720" height="130" rx="12" fill="#EFF6FD" stroke="#0078D4" stroke-width="2"/>
+<text x="1017.6666666666667" y="540" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">Collect across stage-specific ADO organizations</text>
+<text x="1047.0" y="580" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Organization / project configuration + field adapters</text>
+<text x="1048.3333333333333" y="611" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">ADO Analytics / APIs: work items, links and evidence</text>
+<polyline points="1300,650 1300,725" fill="none" stroke="#0078D4" stroke-width="3"/>
+<polygon points="1300,725 1293.9104825224429,712.3937405670625 1306.0895174775571,712.3937405670625" fill="#0078D4"/>
+<rect x="940" y="725" width="720" height="160" rx="12" fill="#EFF6FD" stroke="#0078D4" stroke-width="2"/>
+<text x="1049.0" y="745" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">Normalize stage records and issue records</text>
+<text x="1031.0052083333333" y="785" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Standardize field names, entities, states and timestamps</text>
+<text x="1044.6614583333333" y="816" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Preserve source org / project / work item provenance</text>
+<text x="1110.6770833333333" y="847" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Deduplicate by source identity, not title</text>
+<rect x="100" y="715" width="700" height="260" rx="12" fill="#F3F4F6" stroke="#667085" stroke-width="2"/>
+<text x="192.0" y="735" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">Common evidence captured for all 8 stages</text>
+<text x="213.0" y="775" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Media / platform / SKU identity + stage + test run</text>
+<text x="209.68229166666666" y="806" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Test start date / end date + sign-off owner / status</text>
+<text x="309.34375" y="837" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Test report links + exceptions</text>
+<text x="261.33854166666663" y="868" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Issue ID, description, state and category</text>
+<text x="276.66666666666663" y="899" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Internal / external issue classification</text>
+<text x="266.66145833333337" y="930" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Issue start / resolution time + duration</text>
+<polyline points="800,805 940,805" fill="none" stroke="#667085" stroke-width="3"/>
+<polygon points="940,805 927.3937405670625,811.0895174775573 927.3937405670625,798.9104825224427" fill="#667085"/>
+<polyline points="1300,885 1300,975" fill="none" stroke="#0078D4" stroke-width="3"/>
+<polygon points="1300,975 1293.9104825224429,962.3937405670625 1306.0895174775571,962.3937405670625" fill="#0078D4"/>
+<rect x="940" y="975" width="720" height="160" rx="12" fill="#EFF6FD" stroke="#0078D4" stroke-width="2"/>
+<text x="1092.3385416666667" y="995" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">Persist normalized evidence in SQL</text>
+<text x="1054.0208333333333" y="1035" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">StageTest, Issue, Report, SignOff and Entity records</text>
+<text x="1025.3333333333333" y="1066" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Canonical identity: organization + project + work item ID</text>
+<text x="1070.0" y="1097" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Keep repeat test runs and source links traceable</text>
+<rect x="100" y="1040" width="700" height="160" rx="12" fill="#F3F4F6" stroke="#667085" stroke-width="2"/>
+<text x="267.98958333333337" y="1060" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">Existing repository foundation</text>
+<text x="256.66666666666663" y="1100" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">C# SyncAdoTimer: ADO Analytics -&gt; SQL</text>
+<text x="184.67708333333331" y="1131" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Programs / SubPrograms / Issues / ChildParentRelations</text>
+<text x="200.66666666666666" y="1162" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Proposed normalized model extends this foundation</text>
+<polyline points="800,1100 940,1100" fill="none" stroke="#667085" stroke-width="3" stroke-dasharray="8 6"/>
+<polygon points="940,1100 927.3937405670625,1106.0895174775571 927.3937405670625,1093.9104825224429" fill="#667085"/>
+<polyline points="1300,1135 1300,1210" fill="none" stroke="#0078D4" stroke-width="3"/>
+<polygon points="1300,1210 1293.9104825224429,1197.3937405670624 1306.0895174775571,1197.3937405670624" fill="#0078D4"/>
+<rect x="940" y="1210" width="720" height="160" rx="12" fill="#EFF6FD" stroke="#0078D4" stroke-width="2"/>
+<text x="1028.3385416666667" y="1230" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">Resolve all applicable stage evidence per SKU</text>
+<text x="1109.3385416666667" y="1270" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Media: CDL + RDT + Media Perf testing</text>
+<text x="1199.0104166666667" y="1301" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Platform: SIP + SLCQ</text>
+<text x="1032.03125" y="1332" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">SKU: SKU Qual + Scale Test + Load &amp; Performance Test</text>
+<rect x="1810" y="1200" width="700" height="160" rx="12" fill="#F3F4F6" stroke="#667085" stroke-width="2"/>
+<text x="1956.0" y="1220" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">SKU -&gt; media / platform mapping</text>
+<text x="1962.6666666666667" y="1260" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">SKU composition and canonical entity IDs</text>
+<text x="1916.6666666666667" y="1291" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Approved mappings; never guess joins from names</text>
+<text x="1927.0" y="1322" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Link applicable components, stages and test runs</text>
+<polyline points="1810,1285 1660,1285" fill="none" stroke="#667085" stroke-width="3"/>
+<polygon points="1660,1285 1672.6062594329376,1278.9104825224429 1672.6062594329376,1291.0895174775571" fill="#667085"/>
+<polyline points="1300,1370 1300,1420" fill="none" stroke="#0078D4" stroke-width="3"/>
+<polygon points="1300,1420 1293.9104825224429,1407.3937405670624 1306.0895174775571,1407.3937405670624" fill="#0078D4"/>
+<polygon points="1300,1420.0 1550.0,1510 1300,1600.0 1050.0,1510" fill="#EFF6FD" stroke="#0078D4" stroke-width="3"/>
+<text x="1214.0" y="1479.0" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">Entity mapping</text>
+<text x="1247.3333333333333" y="1510.0" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">resolved?</text>
+<polyline points="1550,1510 1810,1510" fill="none" stroke="#0078D4" stroke-width="3"/>
+<polygon points="1810,1510 1797.3937405670624,1516.0895174775571 1797.3937405670624,1503.9104825224429" fill="#0078D4"/>
+<text x="1655" y="1470" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">No</text>
+<rect x="1810" y="1440" width="700" height="160" rx="12" fill="#F3F4F6" stroke="#667085" stroke-width="2"/>
+<text x="1961.3333333333333" y="1460" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">Flag mapping gaps for correction</text>
+<text x="1941.0" y="1500" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Keep unmapped / ambiguous evidence visible</text>
+<text x="1894.6666666666667" y="1531" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Do not invent associations or mark missing tests passed</text>
+<text x="2010.6666666666667" y="1562" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Correct mapping and reprocess</text>
+<polyline points="2160,1600 2160,1660 2550,1660 2550,1160 2160,1160 2160,1200" fill="none" stroke="#667085" stroke-width="3" stroke-dasharray="8 6"/>
+<polygon points="2160,1200 2153.9104825224426,1187.3937405670624 2166.0895174775574,1187.3937405670624" fill="#667085"/>
+<polyline points="1300,1600 1300,1700" fill="none" stroke="#0078D4" stroke-width="3"/>
+<polygon points="1300,1700 1293.9104825224429,1687.3937405670624 1306.0895174775571,1687.3937405670624" fill="#0078D4"/>
+<text x="1325" y="1638" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">Yes</text>
+<rect x="940" y="1700" width="720" height="160" rx="12" fill="#EFF6FD" stroke="#0078D4" stroke-width="2"/>
+<text x="1071.0" y="1720" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">Build the SKU-level SQL evidence view</text>
+<text x="1014.3333333333333" y="1760" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Unique issue counts by stage / theme and internal / external</text>
+<text x="1010.015625" y="1791" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Test dates, sign-off owners, reports, exceptions and coverage</text>
+<text x="1006.3333333333333" y="1822" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Issue durations from timestamps; missing data stays unknown</text>
+<rect x="100" y="1660" width="700" height="190" rx="12" fill="#F3F4F6" stroke="#667085" stroke-width="2"/>
+<text x="295.66666666666663" y="1680" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">Deterministic metric rules</text>
+<text x="268.33333333333337" y="1720" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Count each source issue once per SKU</text>
+<text x="223.33333333333334" y="1751" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Resolved duration = resolution time - start time</text>
+<text x="250.99479166666666" y="1782" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Open issue age = refresh time - start time</text>
+<text x="260.33333333333337" y="1813" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Issue-days are not elapsed test duration</text>
+<polyline points="800,1770 940,1770" fill="none" stroke="#667085" stroke-width="3"/>
+<polygon points="940,1770 927.3937405670625,1776.0895174775571 927.3937405670625,1763.9104825224429" fill="#667085"/>
+<polyline points="1660,1780 2160,1780 2160,1840" fill="none" stroke="#5C2D91" stroke-width="3"/>
+<polygon points="2160,1840 2153.9104825224426,1827.3937405670624 2166.0895174775574,1827.3937405670624" fill="#5C2D91"/>
+<rect x="1810" y="1840" width="700" height="220" rx="12" fill="#F5EFFA" stroke="#5C2D91" stroke-width="2"/>
+<text x="1919.6614583333333" y="1860" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">Generate and validate the LLM summary</text>
+<text x="1900.671875" y="1900" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Ground in the SKU&#x27;s mapped evidence and SQL counts</text>
+<text x="1948.3333333333333" y="1931" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Explain media / platform / load issue themes</text>
+<text x="1974.328125" y="1962" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Cite source ADO items and test reports</text>
+<text x="1943.3385416666667" y="1993" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Do not invent counts, sign-offs or root causes</text>
+<text x="1919.671875" y="2024" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Invalid / missing response -&gt; summary unavailable</text>
+<polyline points="1300,1860 1300,2280" fill="none" stroke="#0C8599" stroke-width="3"/>
+<polygon points="1300,2280 1293.9104825224429,2267.3937405670627 1306.0895174775571,2267.3937405670627" fill="#0C8599"/>
+<text x="760" y="2190" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Structured SKU records + SQL metrics</text>
+<polyline points="2160,2060 2160,2200 2065,2200 2065,2280" fill="none" stroke="#5C2D91" stroke-width="3"/>
+<polygon points="2065,2280 2058.9104825224426,2267.3937405670627 2071.0895174775574,2267.3937405670627" fill="#5C2D91"/>
+<rect x="150" y="2280" width="2300" height="230" rx="12" fill="none" stroke="#0C8599" stroke-width="2"/>
+<text x="174" y="2298" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">SKU dashboard | illustrative output, not live test data</text>
+<rect x="150" y="2345" width="180" height="48" rx="0" fill="#E8F6F6" stroke="#0C8599" stroke-width="2"/>
+<rect x="150" y="2393" width="180" height="95" rx="0" fill="none" stroke="#0C8599" stroke-width="2"/>
+<text x="162" y="2358" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">SKU</text>
+<text x="162" y="2413" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">SKU-A</text>
+<rect x="330" y="2345" width="310" height="48" rx="0" fill="#E8F6F6" stroke="#0C8599" stroke-width="2"/>
+<rect x="330" y="2393" width="310" height="95" rx="0" fill="none" stroke="#0C8599" stroke-width="2"/>
+<text x="342" y="2358" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">Media / platform</text>
+<text x="342" y="2413" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Media-X</text>
+<text x="342" y="2443" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Platform-Y</text>
+<rect x="640" y="2345" width="360" height="48" rx="0" fill="#E8F6F6" stroke="#0C8599" stroke-width="2"/>
+<rect x="640" y="2393" width="360" height="95" rx="0" fill="none" stroke="#0C8599" stroke-width="2"/>
+<text x="652" y="2358" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">Stages &amp; evidence</text>
+<text x="652" y="2413" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Stage links + gap flags</text>
+<text x="652" y="2443" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Report / issue links</text>
+<rect x="1000" y="2345" width="270" height="48" rx="0" fill="#E8F6F6" stroke="#0C8599" stroke-width="2"/>
+<rect x="1000" y="2393" width="270" height="95" rx="0" fill="none" stroke="#0C8599" stroke-width="2"/>
+<text x="1012" y="2358" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">Issues (SQL)</text>
+<text x="1012" y="2413" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">3 unique issues</text>
+<text x="1012" y="2443" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Internal / external</text>
+<rect x="1270" y="2345" width="350" height="48" rx="0" fill="#E8F6F6" stroke="#0C8599" stroke-width="2"/>
+<rect x="1270" y="2393" width="350" height="95" rx="0" fill="none" stroke="#0C8599" stroke-width="2"/>
+<text x="1282" y="2358" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">Dates / sign-off</text>
+<text x="1282" y="2413" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Test + issue durations</text>
+<text x="1282" y="2443" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Sign-off / exceptions</text>
+<rect x="1620" y="2345" width="830" height="48" rx="0" fill="#F5EFFA" stroke="#5C2D91" stroke-width="2"/>
+<rect x="1620" y="2393" width="830" height="95" rx="0" fill="none" stroke="#5C2D91" stroke-width="2"/>
+<text x="1632" y="2358" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">LLM issue summary</text>
+<text x="1632" y="2413" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">3 issues: 1 media, 1 platform, 1 load</text>
+<text x="1632" y="2443" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Evidence-linked explanation</text>
+<text x="150" y="2560" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Dashboard drill-through: SKU -&gt; stage / test run -&gt; issue, report, sign-off and exception evidence.</text>
+<text x="150" y="2600" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Proposed architecture: extends the repo&#x27;s single-organization C# ADO-to-SQL sync; no claim that the full dashboard or LLM exists today.</text>
+<text x="150" y="2638" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Secrets stay outside code. Retain source provenance and refresh status; do not confuse missing evidence with zero issues.</text>
+</svg>
