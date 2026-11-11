@@ -96,43 +96,48 @@
 <rect x="1640" y="1260" width="660" height="130" rx="12" fill="#F5EFFA" stroke="#5C2D91" stroke-width="2"/>
 <text x="1791.0" y="1280" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">LLM explains the issue picture</text>
 <text x="1745.6666666666667" y="1320" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Ground only in mapped records + SQL metrics</text>
-<text x="1776.3333333333333" y="1351" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Explain issue themes with evidence links</text>
+<text x="1716.6666666666667" y="1351" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Summarize issue counts, themes and affected stages</text>
 <polyline points="1200,1225 1200,1480" fill="none" stroke="#0C8599" stroke-width="3"/>
 <polygon points="1200,1480 1193.9104825224429,1467.3937405670624 1206.0895174775571,1467.3937405670624" fill="#0C8599"/>
 <text x="880" y="1410" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Structured test / issue data</text>
 <polyline points="1970,1390 1970,1480" fill="none" stroke="#5C2D91" stroke-width="3"/>
 <polygon points="1970,1480 1963.9104825224429,1467.3937405670624 1976.0895174775571,1467.3937405670624" fill="#5C2D91"/>
-<rect x="100" y="1480" width="2200" height="230" rx="12" fill="none" stroke="#0C8599" stroke-width="2"/>
+<rect x="100" y="1480" width="2200" height="250" rx="12" fill="none" stroke="#0C8599" stroke-width="2"/>
 <text x="124" y="1498" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">SKU dashboard | illustrative output, not live test data</text>
-<rect x="100" y="1545" width="180" height="48" rx="0" fill="#E8F6F6" stroke="#0C8599" stroke-width="2"/>
-<rect x="100" y="1593" width="180" height="95" rx="0" fill="none" stroke="#0C8599" stroke-width="2"/>
+<rect x="100" y="1545" width="160" height="70" rx="0" fill="#E8F6F6" stroke="#0C8599" stroke-width="2"/>
+<rect x="100" y="1615" width="160" height="95" rx="0" fill="none" stroke="#0C8599" stroke-width="2"/>
 <text x="112" y="1558" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">SKU</text>
-<text x="112" y="1613" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">SKU-A</text>
-<rect x="280" y="1545" width="310" height="48" rx="0" fill="#E8F6F6" stroke="#0C8599" stroke-width="2"/>
-<rect x="280" y="1593" width="310" height="95" rx="0" fill="none" stroke="#0C8599" stroke-width="2"/>
-<text x="292" y="1558" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">Media / platform</text>
-<text x="292" y="1613" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Media-X</text>
-<text x="292" y="1643" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Platform-Y</text>
-<rect x="590" y="1545" width="360" height="48" rx="0" fill="#E8F6F6" stroke="#0C8599" stroke-width="2"/>
-<rect x="590" y="1593" width="360" height="95" rx="0" fill="none" stroke="#0C8599" stroke-width="2"/>
-<text x="602" y="1558" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">Stages &amp; evidence</text>
-<text x="602" y="1613" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Stage links + gap flags</text>
-<text x="602" y="1643" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Report / issue links</text>
-<rect x="950" y="1545" width="270" height="48" rx="0" fill="#E8F6F6" stroke="#0C8599" stroke-width="2"/>
-<rect x="950" y="1593" width="270" height="95" rx="0" fill="none" stroke="#0C8599" stroke-width="2"/>
-<text x="962" y="1558" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">Issues (SQL)</text>
-<text x="962" y="1613" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">3 unique issues</text>
-<text x="962" y="1643" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Internal / external</text>
-<rect x="1220" y="1545" width="350" height="48" rx="0" fill="#E8F6F6" stroke="#0C8599" stroke-width="2"/>
-<rect x="1220" y="1593" width="350" height="95" rx="0" fill="none" stroke="#0C8599" stroke-width="2"/>
-<text x="1232" y="1558" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">Dates / sign-off</text>
-<text x="1232" y="1613" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Test + issue durations</text>
-<text x="1232" y="1643" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Sign-off / exceptions</text>
-<rect x="1570" y="1545" width="730" height="48" rx="0" fill="#F5EFFA" stroke="#5C2D91" stroke-width="2"/>
-<rect x="1570" y="1593" width="730" height="95" rx="0" fill="none" stroke="#5C2D91" stroke-width="2"/>
-<text x="1582" y="1558" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">LLM issue summary</text>
-<text x="1582" y="1613" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">3 issues: 1 media, 1 platform, 1 load</text>
-<text x="1582" y="1643" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Evidence-linked explanation</text>
+<text x="112" y="1635" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">SKU-A</text>
+<rect x="260" y="1545" width="250" height="70" rx="0" fill="#E8F6F6" stroke="#0C8599" stroke-width="2"/>
+<rect x="260" y="1615" width="250" height="95" rx="0" fill="none" stroke="#0C8599" stroke-width="2"/>
+<text x="272" y="1558" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">RDT</text>
+<text x="272" y="1584" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">end date</text>
+<text x="272" y="1635" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">2026-10-02</text>
+<rect x="510" y="1545" width="280" height="70" rx="0" fill="#E8F6F6" stroke="#0C8599" stroke-width="2"/>
+<rect x="510" y="1615" width="280" height="95" rx="0" fill="none" stroke="#0C8599" stroke-width="2"/>
+<text x="522" y="1558" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">Media Perf</text>
+<text x="522" y="1584" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">end date</text>
+<text x="522" y="1635" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">2026-10-05</text>
+<rect x="790" y="1545" width="280" height="70" rx="0" fill="#E8F6F6" stroke="#0C8599" stroke-width="2"/>
+<rect x="790" y="1615" width="280" height="95" rx="0" fill="none" stroke="#0C8599" stroke-width="2"/>
+<text x="802" y="1558" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">SKU Qual</text>
+<text x="802" y="1584" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">end date</text>
+<text x="802" y="1635" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">2026-10-12</text>
+<rect x="1070" y="1545" width="280" height="70" rx="0" fill="#E8F6F6" stroke="#0C8599" stroke-width="2"/>
+<rect x="1070" y="1615" width="280" height="95" rx="0" fill="none" stroke="#0C8599" stroke-width="2"/>
+<text x="1082" y="1558" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">Scale Test</text>
+<text x="1082" y="1584" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">end date</text>
+<text x="1082" y="1635" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">2026-10-16</text>
+<rect x="1350" y="1545" width="300" height="70" rx="0" fill="#E8F6F6" stroke="#0C8599" stroke-width="2"/>
+<rect x="1350" y="1615" width="300" height="95" rx="0" fill="none" stroke="#0C8599" stroke-width="2"/>
+<text x="1362" y="1558" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">Load and Perf</text>
+<text x="1362" y="1584" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">end date</text>
+<text x="1362" y="1635" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">2026-10-20</text>
+<rect x="1650" y="1545" width="650" height="70" rx="0" fill="#F5EFFA" stroke="#5C2D91" stroke-width="2"/>
+<rect x="1650" y="1615" width="650" height="95" rx="0" fill="none" stroke="#5C2D91" stroke-width="2"/>
+<text x="1662" y="1558" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="700" fill="#000000" dominant-baseline="text-before-edge">Issues summary</text>
+<text x="1662" y="1635" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">3 issues found.</text>
+<text x="1662" y="1665" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">2 media issues in Load and Perf.</text>
 <text x="100" y="1750" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Proposed design based on vj926/AdoSQL. Multi-org ingestion, cross-stage mapping and LLM/dashboard are extensions.</text>
 <text x="100" y="1786" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#000000" dominant-baseline="text-before-edge">Counts and durations come from SQL, not the LLM. Missing evidence stays visible; the rightmost column explains it.</text>
 </svg>

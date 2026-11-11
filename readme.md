@@ -14,7 +14,7 @@ Stage order: **CDL -> SIP -> RDT -> Media Perf -> SLCQ -> SKU Qual -> Scale Test
 
 ### Concise version
 
-Stage data is normalized in SQL, linked to each SKU through its media and platform, and displayed with an LLM issue-summary column at the right end of the dashboard.
+Stage data is normalized in SQL and linked to each SKU through its media and platform. The final dashboard table shows SKU, the RDT, Media Perf, SKU Qual, Scale Test, and Load and Perf end dates, followed by Issues summary. A sample summary is: "3 issues found. 2 media issues in Load and Perf."
 
 ![AdoSQL concise architecture](docs/architecture/adosql-concise.png)
 
